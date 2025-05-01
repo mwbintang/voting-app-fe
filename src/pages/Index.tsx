@@ -12,7 +12,7 @@ const Index: React.FC = () => {
   // If already authenticated, redirect to dashboard
   useEffect(() => {
     if (authState.isAuthenticated) {
-      navigate("/dashboard");
+      navigate("/");
     }
   }, [authState.isAuthenticated, navigate]);
   

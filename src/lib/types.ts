@@ -1,6 +1,6 @@
 
 export interface User {
-  id: string;
+  _id: string;
   username: string;
   email: string;
   role: "admin" | "user";
@@ -14,10 +14,10 @@ export interface Vote {
 }
 
 export interface VoteOption {
-  id: string;
+  _id: string;
   name: string;
-  count: number;
   isCustom?: boolean;
+  isPick?: boolean;
 }
 
 export interface AuthState {

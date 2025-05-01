@@ -19,7 +19,7 @@ const VoteOption: React.FC<VoteOptionProps> = ({ option, selected, onSelect }) =
         "cursor-pointer transition-all hover:border-primary",
         selected && "border-primary bg-primary/5"
       )} 
-      onClick={() => onSelect(option.id)}
+      onClick={() => onSelect(option._id)}
     >
       <CardContent className="p-4 flex items-center justify-between">
         <div className="flex items-center">
@@ -42,9 +42,9 @@ const VoteOption: React.FC<VoteOptionProps> = ({ option, selected, onSelect }) =
             </p>
           </div>
         </div>
-        {option.count > 0 && (
+        {/* {option.count > 0 && (
           <span className="text-sm text-muted-foreground">{option.count} votes</span>
-        )}
+        )} */}
       </CardContent>
     </Card>
   );
