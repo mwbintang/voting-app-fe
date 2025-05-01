@@ -18,6 +18,7 @@ export interface VoteOption {
   name: string;
   isCustom?: boolean;
   isPick?: boolean;
+  votes?: number;
 }
 
 export interface AuthState {

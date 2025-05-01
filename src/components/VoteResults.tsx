@@ -17,10 +17,10 @@ const VoteResults: React.FC<VoteResultsProps> = ({ options, totalVotes }) => {
       </CardHeader>
       <CardContent className="space-y-4">
         {options.map((option) => {
-          const percentage = totalVotes > 0 ? Math.round((option.count / totalVotes) * 100) : 0;
+          const percentage = totalVotes > 0 ? Math.round((option.votes / totalVotes) * 100) : 0;
           
           return (
-            <div key={option.id} className="space-y-1">
+            <div key={option._id} className="space-y-1">
               <div className="flex items-center justify-between">
                 <span className="text-sm font-medium">
                   {option.name}
@@ -31,7 +31,7 @@ const VoteResults: React.FC<VoteResultsProps> = ({ options, totalVotes }) => {
                   )}
                 </span>
                 <span className="text-sm text-muted-foreground">
-                  {option.count} votes ({percentage}%)
+                  {option.votes} votes ({percentage}%)
                 </span>
               </div>
               <Progress value={percentage} className="h-2" />
