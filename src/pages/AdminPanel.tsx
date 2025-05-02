@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
 import { Separator } from "@/components/ui/separator";
 import { createCandidate, deleteCandidate, voteStatService } from "@/lib/services/admin";
+import socket from "@/lib/socket";
 
 const AdminPanel: React.FC = () => {
   const { authState } = useAuth();
@@ -50,6 +51,15 @@ const AdminPanel: React.FC = () => {
 
   useEffect(() => {
     fetchVoteStats();
+
+    socket.on("voteUpdated", (data) => {
+      console.log("Received vote update:", data.message);
+      fetchVoteStats(); // Refresh the list when an update is received
+    });
+  
+    return () => {
+      socket.off("voteUpdated");
+    };
   }, []);
 
   const handleAddOption = async () => {
@@ -103,7 +113,7 @@ const AdminPanel: React.FC = () => {
                 <CardHeader>
                   <CardTitle>Current Poll Results</CardTitle>
                   <CardDescription>
-                    Results from the current active poll
+                    Live results from the current active poll
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
