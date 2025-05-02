@@ -70,6 +70,6 @@ This will start the frontend on `http://localhost:5173`.
 
 ## 🔗 Backend
 
-Make sure the [Voting App Backend](https://github.com/your-username/voting-app-backend) is running before starting the frontend.
+Make sure the [Voting App Backend](https://github.com/mwbintang/voting-app-be) is running before starting the frontend.
 
 You can follow the backend setup instructions in its own README.
