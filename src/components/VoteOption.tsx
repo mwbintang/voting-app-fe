@@ -42,9 +42,6 @@ const VoteOption: React.FC<VoteOptionProps> = ({ option, selected, onSelect }) =
             </p>
           </div>
         </div>
-        {/* {option.count > 0 && (
-          <span className="text-sm text-muted-foreground">{option.count} votes</span>
-        )} */}
       </CardContent>
     </Card>
   );
