@@ -53,8 +53,7 @@ const AdminPanel: React.FC = () => {
     fetchVoteStats();
 
     socket.on("voteUpdated", (data) => {
-      console.log("Received vote update:", data.message);
-      fetchVoteStats(); // Refresh the list when an update is received
+      setOptions(data?.candidate);
     });
   
     return () => {
